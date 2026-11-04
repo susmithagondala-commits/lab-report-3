@@ -1,0 +1,146 @@
+{
+  "info": {
+    "name": "Lab 3 - REST API, Query Parameters, Validation and Debugging",
+    "_postman_id": "252u1r6081-lab03",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET - All books",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books"
+      }
+    },
+    {
+      "name": "GET - Search, sort, pagination and price range",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books?search_q=the&order_by=price&order=DESC&limit=5&offset=0&min_price=200&max_price=500"
+      }
+    },
+    {
+      "name": "GET - Invalid sort column (400)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books?order_by=unknown"
+      }
+    },
+    {
+      "name": "GET - Invalid price range (400)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books?min_price=700&max_price=200"
+      }
+    },
+    {
+      "name": "GET - Existing book",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/1"
+      }
+    },
+    {
+      "name": "GET - Missing book (404)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/99999"
+      }
+    },
+    {
+      "name": "GET - Invalid ID (400)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/abc"
+      }
+    },
+    {
+      "name": "POST - Valid book (201)",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/books",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Python Basics\",\n  \"author\": \"John Smith\",\n  \"price\": 350,\n  \"pages\": 250\n}"
+        }
+      }
+    },
+    {
+      "name": "POST - Invalid body (400)",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}/books",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"\",\n  \"author\": \"John Smith\",\n  \"price\": \"hello\",\n  \"pages\": 0\n}"
+        }
+      }
+    },
+    {
+      "name": "PUT - Update book (200)",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/books/1",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Alchemist Updated\",\n  \"author\": \"Paulo Coelho\",\n  \"price\": 400,\n  \"pages\": 210\n}"
+        }
+      }
+    },
+    {
+      "name": "PUT - Missing book (404)",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/books/99999",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Unknown\",\n  \"author\": \"Unknown Author\",\n  \"price\": 100,\n  \"pages\": 100\n}"
+        }
+      }
+    },
+    {
+      "name": "DELETE - Delete book (200)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/books/10"
+      }
+    },
+    {
+      "name": "DELETE - Missing book (404)",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/books/99999"
+      }
+    }
+  ]
+}
