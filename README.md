@@ -126,13 +126,29 @@ SELECT COUNT(*) FROM book;
 ## Screenshots to add
 Capture real screenshots from your Postman and SQLite runs and save them in `screenshots/`:
 - `get-books.png`
+- <img width="1919" height="970" alt="image" src="https://github.com/user-attachments/assets/fec00775-de20-4568-b043-1f46224ec778" />
+
 - `search-sort-filter.png`
+- <img width="1916" height="965" alt="image" src="https://github.com/user-attachments/assets/ef443bde-638d-46c9-bfcc-741b91f16c9c" />
+
 - `get-book-by-id.png`
+- <img width="1914" height="972" alt="image" src="https://github.com/user-attachments/assets/fec231ce-82b5-482c-b59c-fc960bca6b57" />
+
 - `post-valid.png`
+- <img width="1919" height="964" alt="image" src="https://github.com/user-attachments/assets/78564d0e-4fa8-4e3d-a031-abfa8ff7f82a" />
+
 - `post-invalid.png`
+- <img width="1919" height="960" alt="image" src="https://github.com/user-attachments/assets/da1a29e9-f810-497c-9cca-c09a711f7ebf" />
+
 - `put-book.png`
+- <img width="1918" height="971" alt="image" src="https://github.com/user-attachments/assets/5a9a8815-26a0-44bb-b02f-1d52dba96372" />
+
 - `delete-book.png`
+- <img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/bd1976a9-ce06-45df-a005-7fc5eab44471" />
+
 - `not-found-and-invalid-query.png`
+- <img width="1918" height="970" alt="image" src="https://github.com/user-attachments/assets/499029ed-510b-45d2-991f-0c15ac99c02a" />
+
 - `sqlite-database.png`
 
 Embed each screenshot in this README, for example:
