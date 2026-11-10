@@ -2,7 +2,7 @@
 
 **Name:** Gondela Susmitha  
 **Registration number:** 252U1R6081  
-**Section / Class:** 214-AIML-2B  
+**Section / Class:** 207-AIML-2B  
 **Course:** Backend Development Fundamentals · Year II Term II
 
 ## Live link
